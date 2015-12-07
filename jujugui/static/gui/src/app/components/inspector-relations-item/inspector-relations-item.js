@@ -19,6 +19,11 @@ YUI.add('inspector-relations-item', function() {
 
   juju.components.InspectorRelationsItem = React.createClass({
 
+    propTypes: {
+      changeState: React.PropTypes.func.isRequired,
+      relation: React.PropTypes.object.isRequired
+    },
+
     /**
       Handle navigating to a service when it is clicked.
 

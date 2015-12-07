@@ -23,6 +23,13 @@ YUI.add('deployment-summary', function() {
   juju.components.DeploymentSummary = React.createClass({
 
     propTypes: {
+      autoPlace: React.PropTypes.func.isRequired,
+      changeDescriptions: React.PropTypes.func.isRequired,
+      deployButtonAction: React.PropTypes.func.isRequired,
+      closeButtonAction: React.PropTypes.func.isRequired,
+      getUnplacedUnitCount: React.PropTypes.func.isRequired,
+      handlePlacementChange: React.PropTypes.func.isRequired,
+      handleViewMachinesClick: React.PropTypes.func.isRequired,
       summaryClearAction: React.PropTypes.func.isRequired
     },
 

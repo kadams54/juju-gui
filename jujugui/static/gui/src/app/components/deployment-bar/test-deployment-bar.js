@@ -49,11 +49,13 @@ describe('DeploymentBar', function() {
       <juju.components.DeploymentBar
         currentChangeSet={currentChangeSet}
         deployButtonAction={deployButtonAction}
+        generateChangeDescription={sinon.spy()}
         exportEnvironmentFile={sinon.stub()} />, true);
     var instance = renderer.getMountedInstance();
     var output = renderer.getRenderOutput();
     var expected = (
       <juju.components.Panel
+        clickAction={sinon.spy()}
         instanceName="deployment-bar-panel"
         visible={true}>
         <span className="deployment-bar__export link"
@@ -101,6 +103,7 @@ describe('DeploymentBar', function() {
       <juju.components.DeploymentBar
         currentChangeSet={currentChangeSet}
         deployButtonAction={deployButtonAction}
+        generateChangeDescription={sinon.spy()}
         exportEnvironmentFile={sinon.stub()} />);
     assert.deepEqual(output.props.children[6],
         <juju.components.GenericButton
@@ -184,6 +187,7 @@ describe('DeploymentBar', function() {
       <juju.components.DeploymentBar
         currentChangeSet={currentChangeSet}
         deployButtonAction={deployButtonAction}
+        generateChangeDescription={sinon.spy()}
         exportEnvironmentFile={sinon.stub()} />);
     assert.deepEqual(output.props.children[6],
         <juju.components.GenericButton
@@ -201,6 +205,7 @@ describe('DeploymentBar', function() {
         currentChangeSet={currentChangeSet}
         hasCommits={true}
         deployButtonAction={deployButtonAction}
+        generateChangeDescription={sinon.spy()}
         exportEnvironmentFile={sinon.stub()} />);
     assert.deepEqual(output.props.children[6],
         <juju.components.GenericButton
@@ -211,7 +216,7 @@ describe('DeploymentBar', function() {
   });
 
   it('can display a notification', function() {
-    var change = 'add-services-1';
+    var change = {id: 'add-services-1'};
     var currentChangeSet = {'add-services-1': 'add-services-change'};
     var deployButtonAction = sinon.stub();
     var generateChangeDescription = sinon.stub().returns(change);
@@ -240,7 +245,7 @@ describe('DeploymentBar', function() {
 
 
   it('can display a new notification', function() {
-    var change = 'add-services-1';
+    var change = {id: 'add-services-1'};
     var currentChangeSet = {'add-services-1': 'add-services-change'};
     var deployButtonAction = sinon.stub();
     var generateChangeDescription = sinon.stub().returns(change);
@@ -282,7 +287,7 @@ describe('DeploymentBar', function() {
   });
 
   it('does not display a previously displayed notification', function() {
-    var change = 'add-services-1';
+    var change = {id: 'add-services-1'};
     var currentChangeSet = {'add-services-1': 'add-services-change'};
     var deployButtonAction = sinon.stub();
     var generateChangeDescription = sinon.stub().returns(change);
@@ -307,7 +312,7 @@ describe('DeploymentBar', function() {
       <juju.components.DeploymentBarNotification
         change={change} />);
     // Re-render with the new props.
-    change = 'added-unit-1';
+    change = {id: 'added-unit-1'};
     currentChangeSet['added-unit-1'] = 'added-unit-change';
     generateChangeDescription.returns(change);
     renderer.render(

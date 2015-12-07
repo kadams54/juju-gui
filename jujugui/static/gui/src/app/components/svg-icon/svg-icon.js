@@ -22,6 +22,14 @@ YUI.add('svg-icon', function() {
 
   juju.components.SvgIcon = React.createClass({
 
+    propTypes: {
+      size: React.PropTypes.string,
+      width: React.PropTypes.string,
+      height: React.PropTypes.string,
+      className: React.PropTypes.string,
+      name: React.PropTypes.string.isRequired
+    },
+
     getInitialState: function() {
       return this._generateDimensions(this.props);
     },
@@ -37,7 +45,7 @@ YUI.add('svg-icon', function() {
       @returns {Object} The object of dimensions.
     */
     _generateDimensions: function(props) {
-      var size = props.size || this.props.size || 16;
+      var size = props.size || this.props.size || '16';
       return {
         width: props.width || this.props.width || size,
         height: props.height || this.props.height || size

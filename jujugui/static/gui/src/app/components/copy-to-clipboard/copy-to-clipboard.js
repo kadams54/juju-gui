@@ -26,6 +26,7 @@ YUI.add('copy-to-clipboard', function() {
 
     /* Define and validate the properites available on this component. */
     propTypes: {
+      className: React.PropTypes.string,
       value: React.PropTypes.string
     },
 

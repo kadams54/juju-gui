@@ -25,13 +25,19 @@ YUI.add('entity-details', function() {
 
     /* Define and validate the properites available on this component. */
     propTypes: {
+      addNotification: React.PropTypes.func.isRequired,
       changeState: React.PropTypes.func.isRequired,
       deployService: React.PropTypes.func.isRequired,
+      getBundleYAML: React.PropTypes.func.isRequired,
+      getDiagramURL: React.PropTypes.func.isRequired,
       getEntity: React.PropTypes.func.isRequired,
+      getFile: React.PropTypes.func.isRequired,
       id: React.PropTypes.string.isRequired,
+      importBundleYAML: React.PropTypes.func.isRequired,
+      makeEntityModel: React.PropTypes.func.isRequired,
       pluralize: React.PropTypes.func.isRequired,
-      scrollPosition: React.PropTypes.number.isRequired,
-      makeEntityModel: React.PropTypes.func.isRequired
+      renderMarkdown: React.PropTypes.func.isRequired,
+      scrollPosition: React.PropTypes.number.isRequired
     },
 
     /**

@@ -22,9 +22,13 @@ YUI.add('deployment-bar', function() {
 
   juju.components.DeploymentBar = React.createClass({
     propTypes: {
+      currentChangeSet: React.PropTypes.object.isRequired,
+      deployButtonAction: React.PropTypes.func.isRequired,
       exportEnvironmentFile: React.PropTypes.func.isRequired,
-      renderDragOverNotification: React.PropTypes.func.isRequired,
-      importBundleFile: React.PropTypes.func.isRequired
+      generateChangeDescription: React.PropTypes.func.isRequired,
+      hasCommits: React.PropTypes.bool.isRequired,
+      importBundleFile: React.PropTypes.func.isRequired,
+      renderDragOverNotification: React.PropTypes.func.isRequired
     },
 
     previousNotifications: [],
@@ -49,7 +53,7 @@ YUI.add('deployment-bar', function() {
       Update the state with the latest change if it has changed.
 
       @method _updateLatestChange
-      @param {Object} currentChangeSet The collection of ecs changes.
+      @param {Object} changeSet The collection of ecs changes.
     */
     _updateLatestChange: function(changeSet) {
       var keys = Object.keys(changeSet);

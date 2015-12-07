@@ -23,6 +23,16 @@ YUI.add('overview-action', function() {
   juju.components.OverviewAction = React.createClass({
     baseClass: 'overview-action',
 
+    propTypes: {
+      action: React.PropTypes.func.isRequired,
+      icon: React.PropTypes.string.isRequired,
+      linkAction: React.PropTypes.func.isRequired,
+      linkTitle: React.PropTypes.string.isRequired,
+      title: React.PropTypes.string.isRequired,
+      valueType: React.PropTypes.string,
+      value: React.PropTypes.string.isRequired
+    },
+
     /**
       Returns the supplied classes with the 'hidden' class applied if the
       value is falsey.

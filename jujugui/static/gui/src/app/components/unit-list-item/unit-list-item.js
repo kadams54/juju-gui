@@ -22,6 +22,14 @@ YUI.add('unit-list-item', function() {
 
   juju.components.UnitListItem = React.createClass({
 
+    propTypes: {
+      action: React.PropTypes.func.isRequired,
+      className: React.PropTypes.string,
+      whenChanged: React.PropTypes.func.isRequired,
+      label: React.PropTypes.string.isRequired,
+      unitId: React.PropTypes.string.isRequired
+    },
+
     /**
       Returns the classes for the item based on the provided props.
 

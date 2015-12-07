@@ -153,6 +153,7 @@ describe('AddedServicesList', () => {
           findUnrelatedServices={findUnRelatedServices}
           setMVVisibility={setMVVisibility}
           changeState={sinon.stub()}
+          hoverService={sinon.stub()}
           getUnitStatusCounts={sinon.stub()}
           services={services}/>, true);
 
@@ -226,6 +227,7 @@ describe('AddedServicesList', () => {
           findUnrelatedServices={findUnRelatedServices}
           setMVVisibility={setMVVisibility}
           changeState={sinon.stub()}
+          hoverService={sinon.stub()}
           getUnitStatusCounts={sinon.stub()}
           services={services}/>, true);
 
@@ -264,6 +266,7 @@ describe('AddedServicesList', () => {
           findUnrelatedServices={sinon.stub()}
           setMVVisibility={sinon.stub()}
           changeState={sinon.stub()}
+          hoverService={sinon.stub()}
           getUnitStatusCounts={sinon.stub()}
           services={services}/>, true);
 
@@ -291,6 +294,7 @@ describe('AddedServicesList', () => {
           findUnrelatedServices={sinon.stub()}
           setMVVisibility={sinon.stub()}
           changeState={sinon.stub()}
+          hoverService={sinon.stub()}
           getUnitStatusCounts={sinon.stub()}
           services={services}/>, true);
 

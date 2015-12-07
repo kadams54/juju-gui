@@ -22,6 +22,12 @@ YUI.add('panel-component', function() {
 
   juju.components.Panel = React.createClass({
 
+    propTypes: {
+      clickAction: React.PropTypes.func,
+      instanceName: React.PropTypes.string.isRequired,
+      visible: React.PropTypes.bool.isRequired
+    },
+
     /**
       Returns the supplied classes with the 'active' class applied if the
       component is the one which is active.

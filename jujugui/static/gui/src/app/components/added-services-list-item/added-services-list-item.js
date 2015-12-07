@@ -23,14 +23,16 @@ YUI.add('added-services-list-item', function() {
   juju.components.AddedServicesListItem = React.createClass({
 
     propTypes: {
-      focusService: React.PropTypes.func.isRequired,
-      unfocusService: React.PropTypes.func.isRequired,
-      fadeService: React.PropTypes.func.isRequired,
-      unfadeService: React.PropTypes.func.isRequired,
-      getUnitStatusCounts: React.PropTypes.func.isRequired,
       changeState: React.PropTypes.func.isRequired,
+      fadeService: React.PropTypes.func.isRequired,
+      focusService: React.PropTypes.func.isRequired,
+      getUnitStatusCounts: React.PropTypes.func.isRequired,
+      hovered: React.PropTypes.bool,
+      hoverService: React.PropTypes.func.isRequired,
       panToService: React.PropTypes.func.isRequired,
-      service: React.PropTypes.object.isRequired
+      service: React.PropTypes.object.isRequired,
+      unfadeService: React.PropTypes.func.isRequired,
+      unfocusService: React.PropTypes.func.isRequired
     },
 
     /**

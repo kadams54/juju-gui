@@ -22,6 +22,10 @@ YUI.add('button-row', function() {
 
   juju.components.ButtonRow = React.createClass({
 
+    propTypes: {
+      buttons: React.PropTypes.array.isRequired
+    },
+
     /**
       Returns the classes for the footer based on the provided props.
       @method _generateClasses

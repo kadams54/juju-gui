@@ -21,6 +21,20 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 YUI.add('search-results', function(Y) {
 
   juju.components.SearchResults = React.createClass({
+    propTypes: {
+      changeState: React.PropTypes.func.isRequired,
+      charmstoreSearch: React.PropTypes.func.isRequired,
+      makeEntityModel: React.PropTypes.func.isRequired,
+      provides: React.PropTypes.string.isRequired,
+      query: React.PropTypes.string.isRequired,
+      requires: React.PropTypes.string.isRequired,
+      series: React.PropTypes.string.isRequired,
+      seriesList: React.PropTypes.object.isRequired,
+      sort: React.PropTypes.string.isRequired,
+      tags: React.PropTypes.string.isRequired,
+      type: React.PropTypes.string.isRequired
+    },
+
     searchXhr: null,
 
      /**

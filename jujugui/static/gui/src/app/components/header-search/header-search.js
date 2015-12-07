@@ -22,6 +22,11 @@ YUI.add('header-search', function() {
 
   juju.components.HeaderSearch = React.createClass({
 
+    propTypes: {
+      getAppState: React.PropTypes.func.isRequired,
+      changeState: React.PropTypes.func.isRequired
+    },
+
     /**
       Get the current state of the header search.
 

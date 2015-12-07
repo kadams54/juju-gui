@@ -21,6 +21,23 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 YUI.add('charmbrowser-component', function() {
 
   juju.components.Charmbrowser = React.createClass({
+
+    propTypes: {
+      addNotification: React.PropTypes.func.isRequired,
+      changeState: React.PropTypes.func.isRequired,
+      charmstoreSearch: React.PropTypes.func.isRequired,
+      deployService: React.PropTypes.func.isRequired,
+      importBundleYAML: React.PropTypes.func.isRequired,
+      getBundleYAML: React.PropTypes.func.isRequired,
+      getDiagramURL: React.PropTypes.func.isRequired,
+      getEntity: React.PropTypes.func.isRequired,
+      getFile: React.PropTypes.func.isRequired,
+      makeEntityModel: React.PropTypes.func.isRequired,
+      renderMarkdown: React.PropTypes.func.isRequired,
+      series: React.PropTypes.object.isRequired,
+      utils: React.PropTypes.object.isRequired
+    },
+
     /**
       Get the current state of the charmbrowser.
 

@@ -21,6 +21,10 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 YUI.add('deployment-bar-notification', function() {
 
   juju.components.DeploymentBarNotification = React.createClass({
+    propTypes: {
+      change: React.PropTypes.object.isRequired
+    },
+
     timeout: null,
 
     /**

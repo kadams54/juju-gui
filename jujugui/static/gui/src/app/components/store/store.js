@@ -22,6 +22,13 @@ YUI.add('store', function() {
 
   juju.components.Store = React.createClass({
 
+    propTypes: {
+      changeState: React.PropTypes.func.isRequired,
+      charmstoreSearch: React.PropTypes.func.isRequired,
+      makeEntityModel: React.PropTypes.func.isRequired,
+      seriesList: React.PropTypes.object.isRequired
+    },
+
     render: function() {
       return (
         <div className="store">

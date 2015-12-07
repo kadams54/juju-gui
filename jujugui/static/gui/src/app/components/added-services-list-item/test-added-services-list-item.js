@@ -51,6 +51,7 @@ describe('AddedServicesListItem', function() {
 
     var renderer = jsTestUtils.shallowRender(
         <juju.components.AddedServicesListItem
+          hoverService={sinon.stub()}
           focusService={sinon.stub()}
           unfocusService={sinon.stub()}
           fadeService={sinon.stub()}
@@ -136,6 +137,7 @@ describe('AddedServicesListItem', function() {
         }};
       var renderer = jsTestUtils.shallowRender(
           <juju.components.AddedServicesListItem
+            hoverService={sinon.stub()}
             focusService={sinon.stub()}
             unfocusService={sinon.stub()}
             fadeService={sinon.stub()}
@@ -197,6 +199,7 @@ describe('AddedServicesListItem', function() {
 
     var renderer = jsTestUtils.shallowRender(
       <juju.components.AddedServicesListItem
+        hoverService={sinon.stub()}
         focusService={sinon.stub()}
         unfocusService={sinon.stub()}
         fadeService={sinon.stub()}
@@ -256,6 +259,7 @@ describe('AddedServicesListItem', function() {
       }};
     var renderer = jsTestUtils.shallowRender(
       <juju.components.AddedServicesListItem
+        hoverService={sinon.stub()}
         focusService={sinon.stub()}
         unfocusService={sinon.stub()}
         fadeService={sinon.stub()}
@@ -315,6 +319,7 @@ describe('AddedServicesListItem', function() {
       }};
     var renderer = jsTestUtils.shallowRender(
       <juju.components.AddedServicesListItem
+        hoverService={sinon.stub()}
         focusService={sinon.stub()}
         unfocusService={sinon.stub()}
         fadeService={sinon.stub()}
@@ -377,6 +382,7 @@ describe('AddedServicesListItem', function() {
     var shallowRenderer = testUtils.createRenderer();
     shallowRenderer.render(
         <juju.components.AddedServicesListItem
+          hoverService={sinon.stub()}
           focusService={sinon.stub()}
           unfocusService={sinon.stub()}
           fadeService={sinon.stub()}
@@ -407,6 +413,7 @@ describe('AddedServicesListItem', function() {
 
     var renderer = jsTestUtils.shallowRender(
       <juju.components.AddedServicesListItem
+        hoverService={sinon.stub()}
         focusService={sinon.stub()}
         unfocusService={sinon.stub()}
         fadeService={sinon.stub()}
@@ -433,6 +440,7 @@ describe('AddedServicesListItem', function() {
 
     var renderer = jsTestUtils.shallowRender(
       <juju.components.AddedServicesListItem
+        hoverService={sinon.stub()}
         focusService={sinon.stub()}
         unfocusService={sinon.stub()}
         fadeService={sinon.stub()}
@@ -454,6 +462,7 @@ describe('AddedServicesListItem', function() {
     // Re-render to trigger the componentWillReceiveProps.
     renderer.render(
       <juju.components.AddedServicesListItem
+        hoverService={sinon.stub()}
         focusService={sinon.stub()}
         unfocusService={sinon.stub()}
         fadeService={sinon.stub()}
@@ -477,6 +486,7 @@ describe('AddedServicesListItem', function() {
     mockService.set('highlight', false);
     var instance = testUtils.renderIntoDocument(
       <juju.components.AddedServicesListItem
+        hoverService={sinon.stub()}
         focusService={focusService}
         unfocusService={unfocusService}
         fadeService={sinon.stub()}
@@ -506,6 +516,7 @@ describe('AddedServicesListItem', function() {
     mockService.set('fade', false);
     var instance = testUtils.renderIntoDocument(
       <juju.components.AddedServicesListItem
+        hoverService={sinon.stub()}
         focusService={sinon.stub()}
         unfocusService={sinon.stub()}
         fadeService={fadeService}
@@ -545,10 +556,10 @@ describe('AddedServicesListItem', function() {
     var output = jsTestUtils.shallowRender(
         <juju.components.AddedServicesListItem
           changeState={changeStub}
-          fadeService={sinon.stub()}
-          focusService={sinon.stub()}
-          hoverService={hoverService}
+          fadeService={sinon.spy()}
+          focusService={sinon.spy()}
           getUnitStatusCounts={getUnitStatusCounts()}
+          hoverService={hoverService}
           panToService={sinon.stub()}
           service={service}
           unfadeService={sinon.stub()}
@@ -575,8 +586,8 @@ describe('AddedServicesListItem', function() {
     var output = jsTestUtils.shallowRender(
         <juju.components.AddedServicesListItem
           changeState={changeStub}
-          fadeService={sinon.stub()}
-          focusService={sinon.stub()}
+          fadeService={sinon.spy()}
+          focusService={sinon.spy()}
           hoverService={hoverService}
           getUnitStatusCounts={getUnitStatusCounts()}
           panToService={sinon.stub()}

@@ -22,6 +22,12 @@ YUI.add('inspector-confirm', function() {
 
   juju.components.InspectorConfirm = React.createClass({
 
+    propTypes: {
+      open: React.PropTypes.bool,
+      message: React.PropTypes.string.isRequired,
+      buttons: React.PropTypes.array.isRequired
+    },
+
     /**
       Get the current state of the confirmation.
       @method getInitialState

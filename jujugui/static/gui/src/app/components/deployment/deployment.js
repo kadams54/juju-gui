@@ -22,8 +22,16 @@ YUI.add('deployment-component', function() {
 
   juju.components.Deployment = React.createClass({
     propTypes: {
+      autoPlaceUnits: React.PropTypes.func.isRequired,
+      changeState: React.PropTypes.func.isRequired,
+      ecsClear: React.PropTypes.func.isRequired,
+      ecsCommit: React.PropTypes.func.isRequired,
       exportEnvironmentFile: React.PropTypes.func.isRequired,
-      ecsClear: React.PropTypes.func.isRequired
+      changeDescriptions: React.PropTypes.func.isRequired,
+      currentChangeSet: React.PropTypes.object.isRequired,
+      generateChangeDescription: React.PropTypes.func.isRequired,
+      getUnplacedUnitCount: React.PropTypes.func.isRequired,
+      services: React.PropTypes.array.isRequired
     },
 
     /**

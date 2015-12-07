@@ -22,6 +22,14 @@ YUI.add('deployment-summary-change-item', function() {
 
   juju.components.DeploymentSummaryChangeItem = React.createClass({
 
+    propTypes: {
+      change: React.PropTypes.object.isRequired,
+      currentChangeSet: React.PropTypes.object.isRequired,
+      deployButtonAction: React.PropTypes.func.isRequired,
+      generateChangeDescription: React.PropTypes.func.isRequired,
+      hasCommits: React.PropTypes.bool.isRequired
+    },
+
     /**
       Generate the icon node.
 

@@ -22,6 +22,14 @@ YUI.add('search-results-select-filter', function(Y) {
 
   juju.components.SearchResultsSelectFilter = React.createClass({
 
+    propTypes: {
+      items: React.PropTypes.array.isRequired,
+      filter: React.PropTypes.string.isRequired,
+      changeState: React.PropTypes.func.isRequired,
+      label: React.PropTypes.string.isRequired,
+      currentValue: React.PropTypes.string.isRequired
+    },
+
     /**
       Generate a list of items.
 

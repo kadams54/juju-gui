@@ -21,6 +21,15 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 YUI.add('service-overview', function() {
 
   juju.components.ServiceOverview = React.createClass({
+    propTypes: {
+      confirmationOpen: React.PropTypes.func.isRequired,
+      changeState: React.PropTypes.func.isRequired,
+      getUnitStatusCounts: React.PropTypes.func.isRequired,
+      serviceRelations: React.PropTypes.array.isRequired,
+      destroyService: React.PropTypes.func.isRequired,
+      clearState: React.PropTypes.func.isRequired,
+      service: React.PropTypes.object.isRequired
+    },
 
     /**
       Get the current state of the inspector.

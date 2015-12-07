@@ -22,12 +22,14 @@ YUI.add('env-switcher', function() {
 
   var EnvSwitcher = React.createClass({
     propTypes: {
-      jem: React.PropTypes.object,
+      app: React.PropTypes.object,
+      authDetails: React.PropTypes.object,
+      changeState: React.PropTypes.func.isRequired,
+      dbEnvironmentSet: React.PropTypes.func.isRequired,
       env: React.PropTypes.object,
       environmentName: React.PropTypes.string,
-      app: React.PropTypes.object,
-      showConnectingMask: React.PropTypes.func.isRequired,
-      dbEnvironmentSet: React.PropTypes.func.isRequired
+      jem: React.PropTypes.object,
+      showConnectingMask: React.PropTypes.func.isRequired
     },
 
     getInitialState: function() {

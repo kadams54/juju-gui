@@ -22,6 +22,11 @@ YUI.add('inspector-expose-unit', function() {
 
   juju.components.InspectorExposeUnit = React.createClass({
 
+    propTypes: {
+      unit: React.PropTypes.object.isRequired,
+      action: React.PropTypes.func.isRequired
+    },
+
     /**
       Don't bubble the click event to the parent.
 

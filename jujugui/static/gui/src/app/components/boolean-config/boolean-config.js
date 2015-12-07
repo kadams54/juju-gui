@@ -22,6 +22,16 @@ YUI.add('boolean-config', function() {
 
   juju.components.BooleanConfig = React.createClass({
 
+    propTypes: {
+      config: React.PropTypes.oneOfType([
+        React.PropTypes.string,
+        React.PropTypes.bool
+      ]).isRequired,
+      onChange: React.PropTypes.func,
+      label: React.PropTypes.string.isRequired,
+      option: React.PropTypes.object.isRequired
+    },
+
     getInitialState: function() {
       return { value: this._cleanConfig(this.props.config) };
     },

@@ -22,9 +22,15 @@ YUI.add('generic-button', function() {
 
   juju.components.GenericButton = React.createClass({
     propTypes: {
+      action: React.PropTypes.func.isRequired,
+      disabled: React.PropTypes.bool,
       icon: React.PropTypes.string,
       submit: React.PropTypes.bool,
-      title: React.PropTypes.string
+      title: React.PropTypes.oneOfType([
+        React.PropTypes.string,
+        React.PropTypes.number
+      ]).isRequired,
+      type: React.PropTypes.string
     },
 
     /**

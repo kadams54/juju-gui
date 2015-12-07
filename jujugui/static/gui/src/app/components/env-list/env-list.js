@@ -23,9 +23,10 @@ YUI.add('env-list', function() {
   juju.components.EnvList = React.createClass({
 
     propTypes: {
+      createNewEnv: React.PropTypes.func,
       envs: React.PropTypes.array,
       handleEnvClick: React.PropTypes.func,
-      createNewEnv: React.PropTypes.func
+      showUserProfile: React.PropTypes.func.isRequired
     },
 
     getInitialState: function() {

@@ -24,13 +24,15 @@ YUI.add('added-services-list', function() {
 
     propTypes: {
       changeState: React.PropTypes.func.isRequired,
-      getUnitStatusCounts: React.PropTypes.func.isRequired,
-      services: React.PropTypes.object.isRequired,
-      updateUnitFlags: React.PropTypes.func.isRequired,
       findRelatedServices: React.PropTypes.func.isRequired,
       findUnrelatedServices: React.PropTypes.func.isRequired,
+      getUnitStatusCounts: React.PropTypes.func.isRequired,
+      hoveredId: React.PropTypes.string,
+      hoverService: React.PropTypes.func.isRequired,
       panToService: React.PropTypes.func.isRequired,
-      setMVVisibility: React.PropTypes.func.isRequired
+      services: React.PropTypes.object.isRequired,
+      setMVVisibility: React.PropTypes.func.isRequired,
+      updateUnitFlags: React.PropTypes.func.isRequired
     },
 
     generateItemList: function(services) {
