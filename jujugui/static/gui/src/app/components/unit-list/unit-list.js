@@ -24,11 +24,11 @@ YUI.add('unit-list', function() {
 
     propTypes: {
       changeState: React.PropTypes.func.isRequired,
-      serviceId: React.PropTypes.string.isRequired,
-      envResolved: React.PropTypes.func.isRequired,
       destroyUnits: React.PropTypes.func.isRequired,
-      unitStatus: React.PropTypes.string.isRequired,
-      units: React.PropTypes.array.isRequired
+      envResolved: React.PropTypes.func.isRequired,
+      service: React.PropTypes.object.isRequired,
+      units: React.PropTypes.array.isRequired,
+      unitStatus: React.PropTypes.string.isRequired
     },
 
     /**

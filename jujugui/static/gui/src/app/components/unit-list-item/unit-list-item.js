@@ -25,9 +25,9 @@ YUI.add('unit-list-item', function() {
     propTypes: {
       action: React.PropTypes.func.isRequired,
       className: React.PropTypes.string,
-      whenChanged: React.PropTypes.func.isRequired,
       label: React.PropTypes.string.isRequired,
-      unitId: React.PropTypes.string.isRequired
+      unitId: React.PropTypes.string.isRequired,
+      whenChanged: React.PropTypes.func.isRequired
     },
 
     /**

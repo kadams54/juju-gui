@@ -33,6 +33,8 @@ describe('UserProfile', () => {
     };
     var component = jsTestUtils.shallowRender(
       <juju.components.UserProfile
+        dbEnvironmentSet={sinon.stub()}
+        createSocketURL={sinon.stub()}
         jem={jem}
         switchEnv={sinon.stub()}
         showConnectingMask={sinon.stub()}
@@ -67,6 +69,8 @@ describe('UserProfile', () => {
     var listEnvs = sinon.stub();
     var output = jsTestUtils.shallowRender(
       <juju.components.UserProfile
+        dbEnvironmentSet={sinon.stub()}
+        createSocketURL={sinon.stub()}
         switchEnv={sinon.stub()}
         listEnvs={listEnvs}
         showConnectingMask={sinon.stub()}
@@ -88,6 +92,8 @@ describe('UserProfile', () => {
     };
     var component = jsTestUtils.shallowRender(
       <juju.components.UserProfile
+        dbEnvironmentSet={sinon.stub()}
+        createSocketURL={sinon.stub()}
         switchEnv={sinon.stub()}
         changeState={sinon.stub()}
         showConnectingMask={sinon.stub()}
@@ -104,6 +110,8 @@ describe('UserProfile', () => {
     var listEnvs = sinon.stub();
     var component = jsTestUtils.shallowRender(
       <juju.components.UserProfile
+        dbEnvironmentSet={sinon.stub()}
+        createSocketURL={sinon.stub()}
         switchEnv={sinon.stub()}
         changeState={sinon.stub()}
         showConnectingMask={sinon.stub()}

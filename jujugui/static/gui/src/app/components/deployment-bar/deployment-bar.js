@@ -27,6 +27,7 @@ YUI.add('deployment-bar', function() {
       exportEnvironmentFile: React.PropTypes.func.isRequired,
       generateChangeDescription: React.PropTypes.func.isRequired,
       hasCommits: React.PropTypes.bool.isRequired,
+      hideDragOverNotification: React.PropTypes.func.isRequired,
       importBundleFile: React.PropTypes.func.isRequired,
       renderDragOverNotification: React.PropTypes.func.isRequired
     },

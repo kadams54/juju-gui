@@ -31,36 +31,38 @@ describe('UnitListItem', () => {
   it('renders ui based on props', () => {
     var output = jsTestUtils.shallowRender(
         <juju.components.UnitListItem
-          key="unique"
-          checked={false}
+          action={undefined}
+          className="select-all"
           label="unit-name"
           unitId="apache/2"
-          className="select-all"
+          whenChanged={sinon.stub()}
         />);
-    assert.deepEqual(output,
-        <li className="unit-list-item unit-list-item--select-all"
-          data-id="apache/2"
-          onClick={undefined} tabIndex="0" role="button">
-          <label htmlFor="unit-name-unit">
-            <input
-              type="checkbox"
-              id="unit-name-unit"
-              onClick={output.props.children.props.children[0].props.onClick}
-              onChange={output.props.children.props.children[0].props.onChange}
-              checked={false} />
-            unit-name
-          </label>
-        </li>);
+    var expected = (
+      <li className="unit-list-item unit-list-item--select-all"
+        data-id="apache/2"
+        onClick={undefined} tabIndex="0" role="button">
+        <label htmlFor="unit-name-unit">
+          <input
+            type="checkbox"
+            id="unit-name-unit"
+            onClick={output.props.children.props.children[0].props.onClick}
+            onChange={output.props.children.props.children[0].props.onChange}
+            checked={false} />
+          unit-name
+        </label>
+      </li>
+    );
+    assert.deepEqual(output, expected);
   });
 
   it('does not set a "for" id on the label if it is a nav element', () => {
     var output = jsTestUtils.shallowRender(
         <juju.components.UnitListItem
-          key="unique"
-          checked={false}
+          action={sinon.stub()}
+          className="select-all"
           label="unit-name"
-          action="action"
           unitId="apache/2"
+          whenChanged={sinon.stub()}
         />);
     assert.deepEqual(output.props.children,
         <label htmlFor="">
@@ -75,18 +77,19 @@ describe('UnitListItem', () => {
   });
 
   it('has a nav class if it is a nav element', () => {
+    var action = sinon.stub();
     var output = jsTestUtils.shallowRender(
         <juju.components.UnitListItem
-          key="unique"
-          checked={false}
+          action={action}
+          className=""
           label="unit-name"
-          action="action"
           unitId="apache/2"
+          whenChanged={sinon.stub()}
         />);
-    assert.deepEqual(output,
+    var expected = (
       <li className="unit-list-item unit-list-item--nav"
         data-id="apache/2"
-        onClick={output.props.onClick} tabIndex="0" role="button">
+        onClick={action} tabIndex="0" role="button">
         <label htmlFor="">
           <input
             type="checkbox"
@@ -96,17 +99,20 @@ describe('UnitListItem', () => {
             checked={false} />
           unit-name
         </label>
-      </li>);
+      </li>
+    );
+    assert.deepEqual(output, expected);
   });
 
   it('calls the supplied whenChanged if supplied', () => {
     var whenChanged = sinon.stub();
     var output = jsTestUtils.shallowRender(
       <juju.components.UnitListItem
-        key="unique"
-        checked={false}
-        whenChanged={whenChanged}
+        action={sinon.stub()}
+        className="select-all"
         label="unit-name"
+        unitId="apache/2"
+        whenChanged={whenChanged}
       />);
     output.props.children.props.children[0].props.onChange({
       currentTarget: {
@@ -123,11 +129,11 @@ describe('UnitListItem', () => {
     // support simulating click events.
     var output = testUtils.renderIntoDocument(
         <juju.components.UnitListItem
-          key="unique"
-          checked={false}
+          action={actionStub}
+          className="select-all"
           label="unit-name"
           unitId="apache/2"
-          action={actionStub}
+          whenChanged={sinon.stub()}
         />);
     var checkbox = testUtils.findRenderedDOMComponentWithTag(output, 'input');
     testUtils.Simulate.click(checkbox);
